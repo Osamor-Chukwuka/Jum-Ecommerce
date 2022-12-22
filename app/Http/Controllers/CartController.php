@@ -26,6 +26,9 @@ class CartController extends Controller
     }
 
     public function getCart(){
-        
+        $showCart =  Cart::where('users_id', auth()->user()->id)->get();
+        return view('cart', [
+            'showCart' => $showCart
+        ]);
     }
 }

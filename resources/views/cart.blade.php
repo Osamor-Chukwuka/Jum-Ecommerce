@@ -1,15 +1,15 @@
 @include('layouts.app')
 
 <section class="bg-light mt-5 pt-5">
-    {{-- <h2>{{$allProducts}}</h2> --}}
+    <h2>{{'$showCart'}}</h2>
 
     <div class="row my-3 allign-items-center  justify-content-center g-4">
         <div class="col-8 col-lg-4 col-xl-3 bg-white">
-            {{-- <div class="mt-5">
+            <div class="mt-5">
                 <img src="{{asset('images/ebook-cover.png')}}" alt="ebook cover" class="img-fluid"><hr>
                 <span class="fw-bold">SHARE THIS PRODUCT</span>
-            </div> --}}
-            {{-- <div class="card border-0">
+            </div>
+            <div class="card border-0">
                 <div class="card-body text-center py-4">
                     <h4 class="card-title">Starter Edition</h4>
                     <p class="lead card-subtitle">eBook download only</p>
@@ -18,35 +18,35 @@
                     it amet consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
                 </div>
-            </div> --}}
+            </div>
         </div>
 
         <div class="col-9 col-lg-4 bg-white">
-            {{-- <div class="card border-0 mt-4">
-                <p class="h4">{{ $allProducts->name }} {{$allProducts->description}}</p>
-                <p class="h4 mt-5 fw-bold">{{'N ' . $allProducts->price }} </p>
+            <div class="card border-0 mt-4">
+                <p class="h4">{{ 'f' }} {{'f'}}</p>
+                <p class="h4 mt-5 fw-bold">{{'N ' . '$showCart->price '}} </p>
                 <p class="text-secondary">In stock</p>
                 <div>
                     <form action="/" method="post">
-                        <input type="hidden" name="" value="{{$allProducts}}">
+                        <input type="hidden" name="" value="{{$showCart}}">
                         <button type="submit" class="btn btn-xl btn-success ">ADD TO CART</button>
-                    </form> --}}
+                    </form>
                     
                 </div>
 
-                {{-- <div class="card-header text-center text-primary">Most Popular</div>
+                <div class="card-header text-center text-primary">Most Popular</div>
                 <div class="card-body text-center py-5">
                     <h4 class="card-title">Complete Edition</h4>
                     <p class="lead card-subtitle">eBook download & all updates</p>
                     <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
                     <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
-                </div> --}}
+                </div>
             </div>
         </div>
         
         <div class="col-8 col-lg-4 col-xl-3">
-            {{-- <div class="card border-0 text-center">
+            <div class="card border-0 text-center">
                 <p class="h6 fw-bold mt-3">DELIVERY & RETURNS</p>
                 <p>Free delivery on products in Bingham University</p>
 
@@ -64,12 +64,12 @@
                 </div>
 
                 <h6 class="h6 fw-bold mt-3">Warranty</h6>
-                <p class="small">1 Year</p> --}}
+                <p class="small">1 Year</p>
 
-                {{-- <h6 class="h6 fw-bold mt-3"></h6> --}}
+                <h6 class="h6 fw-bold mt-3"></h6>
 
                 <div class="accordion mb-5" id="chapters">
-                    {{-- <div class="accordion-item">
+                    <div class="accordion-item">
                         <h2 class="accordion-header" id="heading-1">
                             <button class="btn fw-bold" type="button" data-bs-toggle="collapse"
                             data-bs-target="#chapter-1" aria-expanded="false" aria-controls="chapter-1">
@@ -89,16 +89,16 @@
 
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
-                {{-- <div class="card-body text-center py-4">
+                <div class="card-body text-center py-4">
                     <h4 class="card-title">Ultimate Edition</h4>
                     <p class="lead card-subtitle">download, updates & extras</p>
                     <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
                     <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor
                     it amet consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>
