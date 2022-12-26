@@ -11,7 +11,7 @@
 
         <div class="col-8 col-lg-2 col-xl-2 fixed-left">
             <div class="card border-0 ">
-                <p class="h6 ps-2 fw-bold mt-3 border-bottom ">CART SUMMARY</p>
+                <p class="h6 ps-2 fw-bold mt-3 border-bottom ">CART SUMMARY {{'('. $lencart .')'}}</p>
         
                 <div class="row allign-items-start fw-bold">
                     <div class="col-lg-5">
@@ -76,12 +76,18 @@
                     </div>
                 </div>
             </div> --}}
-        </div>
-        
 
+            
+        </div>
+
+        
+        
+        
         @foreach($showCart as $showCartt)
             <x-cart-card :showCartt="$showCartt"/>
         @endforeach
+
+        
 
         
     </div>

@@ -28,13 +28,15 @@ class CartController extends Controller
     public function getCart(){
         $showCart =  Cart::where('users_id', auth()->user()->id)->get();
         $totalPrice = 0;
+        $lencart = sizeof($showCart);
         foreach($showCart as $show){
             $totalPrice += str_replace(',', '', $show->price) ;
 
         }
         return view('cart', [
             'showCart' => $showCart,
-            'totalPrice' => $totalPrice
+            'totalPrice' => $totalPrice,
+            'lencart' => $lencart
         ]);
     }
 }

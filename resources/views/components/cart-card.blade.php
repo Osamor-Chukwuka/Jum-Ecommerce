@@ -27,8 +27,12 @@
             </div>
         </a>
 
-        <button class="fw-bold ms-3 mt-2 h6 border-0 bg-white text-success mb-3"><i class="bi bi-trash3-fill"></i>
-            REMOVE</button>
+        <form action="">
+            <button class="fw-bold ms-3 mt-2 h6 border-0 bg-white text-success mb-3"><i class="bi bi-trash3-fill"></i>
+            REMOVE
+            </button>
+        </form>
+        
     </div>
     <!-- <div class="card border-0">
         <div class="card-body text-center py-4">
