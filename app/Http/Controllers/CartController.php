@@ -31,7 +31,7 @@ class CartController extends Controller
         $totalPrice = 0;
         $lencart = sizeof($showCart);
         foreach($showCart as $show){
-            $totalPrice += str_replace(',', '', $show->price) ;
+            $totalPrice += (str_replace(',', '', $show->price)) * $show->quantity ;
 
         }
         return view('cart', [

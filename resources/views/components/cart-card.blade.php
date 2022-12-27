@@ -53,7 +53,7 @@
 
     <div class="card border-0 bg-white pb-5 mt-4">
         <p class="h4"></p>
-        <p class="h4 mt-5 ms-5 pb-4 fw-bold">{{ $showCartt->price }}</p>
+        <p class="h4 mt-5 ms-5 pb-4 fw-bold">N{{ $showCartt->price }}</p>
 
         <div class="btn-group">
             <form action="cart/product/add_quantity" method="post">

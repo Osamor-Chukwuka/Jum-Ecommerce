@@ -24,7 +24,7 @@
                     </div>
         
                     <div class="col pt-3">
-                        <h4 class="fw-bold">{{$totalPrice}}</h4>
+                        <h4 class="fw-bold">N{{$totalPrice}}</h4>
                     </div>
                 </div>
             </div>
