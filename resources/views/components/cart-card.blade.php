@@ -56,9 +56,18 @@
         <p class="h4 mt-5 ms-5 pb-4 fw-bold">{{ $showCartt->price }}</p>
 
         <div class="btn-group">
-            <button class="text-success h1 border-0 bg-white"><i class="bi bi-file-plus-fill "></i></button>
-            <p class="fw-bold mt-2 mx-3">1</p>
-            <button class="text-success h1 border-0 bg-white"><i class="bi bi-file-minus-fill "></i></button>
+            <form action="cart/product/add_quantity" method="post">
+                @csrf
+                <input type="text" name="id" hidden value="{{$showCartt->id}}">
+                <button class="text-success h1 border-0 bg-white"><i class="bi bi-file-plus-fill "></i></button>
+            </form>
+            <p class="fw-bold mt-2 mx-3">{{$showCartt->quantity}}</p>
+            <form action="cart/product/decrease_quantity" method="post">
+                @csrf
+                <input name="id" type="text" hidden value="{{$showCartt->id}}">
+                <button class="text-success h1 border-0 bg-white"><i class="bi bi-file-minus-fill "></i></button>
+            </form>
+            
         </div>
 
         <!-- <div class="card-header text-center text-primary">Most Popular</div>

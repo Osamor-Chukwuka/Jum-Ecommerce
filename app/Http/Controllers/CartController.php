@@ -46,4 +46,38 @@ class CartController extends Controller
         
         return redirect(Route('cart'))->with('status', 'Item removed from Cart');
     }
+
+    public function increaseQuantity(Request $request){
+        $product = Cart::where('id', $request->id)->get();
+
+        foreach($product as $prod){
+            $quantity = $prod->quantity;
+        }
+        
+        Cart::where('id', $request->id)->update(['quantity' => $quantity + 1]);
+
+        return redirect(Route('cart'));
+        
+    }
+
+    public function decreaseQuantity(Request $request){
+        $product = Cart::where('id', $request->id)->get();
+
+        foreach($product as $prod){
+            $quantity = $prod->quantity;
+        }
+
+        if($quantity <=1){
+            return redirect(Route('cart'));
+        }
+
+        else{
+            Cart::where('id', $request->id)->update(['quantity' => $quantity - 1]);
+
+            return redirect(Route('cart'));
+        }
+        
+        
+        
+    }
 }

@@ -54,3 +54,9 @@ Route::post('/products/full/{productDesc}', [CartController::class, 'addCart'])-
 
 // Delete from cart
 Route::post('cart/delete', [CartController::class, 'delete'])->name('deleteFromCart');
+
+// Increase quantity of a product in cart
+Route::post('cart/product/add_quantity', [CartController::class, 'increaseQuantity'])->name('increaseQuantity');
+
+// Decrease quantity of a product in cart
+Route::post('cart/product/decrease_quantity', [CartController::class, 'decreaseQuantity'])->name('decreaseQuantity');
