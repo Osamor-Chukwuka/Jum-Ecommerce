@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -38,5 +39,11 @@ class CartController extends Controller
             'totalPrice' => $totalPrice,
             'lencart' => $lencart
         ]);
+    }
+
+    public function delete(Request $request){
+        Cart::destroy($request->id);
+        
+        return redirect(Route('cart'))->with('status', 'Item removed from Cart');
     }
 }

@@ -51,3 +51,6 @@ Route::get('/cart', [CartController::class, 'getCart'])->name('cart');
 
 // Add to cart
 Route::post('/products/full/{productDesc}', [CartController::class, 'addCart'])->name('addCart');
+
+// Delete from cart
+Route::post('cart/delete', [CartController::class, 'delete'])->name('deleteFromCart');

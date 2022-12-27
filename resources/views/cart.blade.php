@@ -1,6 +1,11 @@
 @include('layouts.app')
 
 <section class="bg-light mt-2 pt-5">
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{session('status')}}
+        </div>
+    @endif
 
     <div class="row my-3 allign-items-center  justify-content-center g-4">
         @if(count($showCart) == 0)

@@ -27,7 +27,10 @@
             </div>
         </a>
 
-        <form action="">
+        <form action="cart/delete" method="POST">
+            @csrf
+            <input type="text" name="id" hidden value= {{$showCartt->id}}>
+            <input type="text" name="users_id" hidden value= {{$showCartt->users_id}}>
             <button class="fw-bold ms-3 mt-2 h6 border-0 bg-white text-success mb-3"><i class="bi bi-trash3-fill"></i>
             REMOVE
             </button>
