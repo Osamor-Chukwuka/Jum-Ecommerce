@@ -9,9 +9,9 @@
 
     <div class="row my-3 allign-items-center  justify-content-center g-4">
         @if(count($showCart) == 0)
-            <p>
-                No Product Found in this Category
-            </p>
+            <h5 class="ms-5">
+                No Product Found in Cart
+            </h5>
         @endif
 
         <div class="col-8 col-lg-2 col-xl-2 fixed-left">

@@ -37,6 +37,8 @@
                         @csrf
                         <input type="hidden" name="name" value="{{$allProducts->name}}">
                         <input type="hidden" name="price" value="{{$allProducts->price}}">
+                        <input type="hidden" name="category_id" value="{{$allProducts->categories_id}}">
+                        <input type="hidden" name="product_id" value="{{$allProducts->id}}">
                         <input type="hidden" name="description" value="{{$allProducts->description}}">
                         <button type="submit" class="btn btn-xl btn-success ">ADD TO CART</button>
                     </form>

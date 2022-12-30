@@ -49,4 +49,13 @@ class CategoriesController extends Controller
             'allProducts' => $allProducts
         ]);
     }
+
+    public function cartProductPage(Request $request){
+        $segment = $request->segment(3);
+        $allProducts = Products::find($segment);
+
+        return view('full-page', [
+            'allProducts' => $allProducts
+        ]);
+    }
 }

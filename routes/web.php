@@ -60,3 +60,10 @@ Route::post('cart/product/add_quantity', [CartController::class, 'increaseQuanti
 
 // Decrease quantity of a product in cart
 Route::post('cart/product/decrease_quantity', [CartController::class, 'decreaseQuantity'])->name('decreaseQuantity');
+
+// show product full page again
+Route::get('/cart/full/{productDesc}', [CartController::class, 'cartProductPage']);
+
+// Route::get('/cart/full/{productDesc}', function() {
+//     return redirect(Route('description', ['productDesc']));
+// });

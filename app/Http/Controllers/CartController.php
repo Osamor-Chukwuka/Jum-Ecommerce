@@ -15,7 +15,9 @@ class CartController extends Controller
         $form = $request->validate([
             'name' => 'required',
             'price' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'category_id' => 'required',
+            'product_id' => 'required'
         ]);
         
         $form['users_id'] = $userid;
@@ -79,5 +81,10 @@ class CartController extends Controller
         
         
         
+    }
+
+    public function cartProductPage(Request $request){
+        $segment = $request->segment(3);
+        return redirect(Route('description', [$segment]));
     }
 }

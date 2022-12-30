@@ -4,7 +4,7 @@
     <div class="mt-4 bg-white">
         <p class="h3 pt-3 ps-3 mb-3">Cart</p>
 
-        <a href="" class="check">
+        <a href="/cart/full/{{$showCartt->product_id}}" class="check">
             <div class="col-auto col-lg-2 col-xl-9">
                 <div class="row">
                     <div class="col-md-2">
