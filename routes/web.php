@@ -67,3 +67,10 @@ Route::get('/cart/full/{productDesc}', [CartController::class, 'cartProductPage'
 // Route::get('/cart/full/{productDesc}', function() {
 //     return redirect(Route('description', ['productDesc']));
 // });
+
+
+// SELLER SECTION
+// show seller registeration form
+Route::get('/jum/seller', function(){
+    return view('sellerReg');
+})->name('seller');

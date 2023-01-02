@@ -24,7 +24,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Jum
                 </a>
-                <a class="navbar-brand mx-5 p-2 ps-5 bg-orange" href="{{ url('/seller') }}">
+                <a class="navbar-brand mx-5 p-2 ps-5 bg-orange" href="{{route('seller')}}">
                     Be a Seller
                 </a>
 
