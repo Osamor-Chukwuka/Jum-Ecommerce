@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoriesController extends Controller
 {
@@ -22,9 +23,26 @@ class CategoriesController extends Controller
             'relationship' => $relationship,
         ]);
     }
+    //
+
 
     public function create(){
-        return view('add-product');
+        if(auth()->user() == []){
+            return view('sellerReg');
+        }
+
+        elseif ( auth()->user()->email == null){
+            return view('sellerReg');
+        }
+        
+        else if( DB::table('seller')->where('email', auth()->user()->email)->exists()){
+            return view('add-product');
+        }
+        
+        else{
+            return view('sellerReg');
+        }
+        
     }
 
     public function store(Request $request){

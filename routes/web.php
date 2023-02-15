@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SellerController;
 use App\Models\Categories;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -74,3 +75,6 @@ Route::get('/cart/full/{productDesc}', [CartController::class, 'cartProductPage'
 Route::get('/jum/seller', function(){
     return view('sellerReg');
 })->name('seller');
+
+// Register seller
+Route::post('/seller/reg', [SellerController::class, 'add']);
