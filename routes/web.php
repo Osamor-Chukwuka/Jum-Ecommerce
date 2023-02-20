@@ -78,3 +78,11 @@ Route::get('/jum/seller', function(){
 
 // Register seller
 Route::post('/seller/reg', [SellerController::class, 'add']);
+
+// my shop
+Route::controller(SellerController::class)->group(function() {
+    Route::get('/my_shop', 'myShop')->name('my_shop');
+    Route::get('/my_shop/products', 'myShop')->name('shop_products');
+    Route::get('/my_shop/orders', 'myShop')->name('shop_orders');
+    Route::get('/my_shop/delivered', 'myShop')->name('shop_delivered');
+});

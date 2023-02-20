@@ -27,6 +27,9 @@
                 <a class="navbar-brand mx-5 p-2 ps-5 bg-orange" href="{{route('seller')}}">
                     Be a Seller
                 </a>
+                <a class="navbar-brand mx-2 p-2 ps-0 bg-orange" href="{{route('my_shop')}}">
+                    My Shop
+                </a>
 
                 <!-- Search -->
                 <form action="">
