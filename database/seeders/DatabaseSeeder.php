@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Products;
+use App\Models\Seller;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +25,16 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        Products::factory(6)->create();
+        $arr2 = ['2', '3', '4', '5', '6', '7'];
+        foreach($arr2 as $b){
+            Seller::factory()->create([
+                'id' => $b
+            ]);
+        }
+        
+
+        Products::factory(6)->create([
+            'seller_id' => 2
+        ]);
     }
 }

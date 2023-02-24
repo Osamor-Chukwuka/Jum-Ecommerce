@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CategoriesController extends Controller
@@ -53,6 +54,10 @@ class CategoriesController extends Controller
         ]);
 
         $form['categories_id'] = $request['category'];
+
+        
+        $seller = DB::table('seller')->where('email', Auth::user()->email)->pluck('id')->first();
+        $form['seller_id'] = $seller;
 
         Products::create($form);
 

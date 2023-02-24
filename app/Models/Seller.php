@@ -9,6 +9,10 @@ class Seller extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["shopName", "accountManager", "phoneNumber", "phoneNumberTwo", "address", "city", "country", "bank", "accountNumber", "email"];
+    protected $fillable = ["id", "shopName", "accountManager", "phoneNumber", "phoneNumberTwo", "address", "city", "country", "bank", "accountNumber", "email"];
     protected $table = 'seller';
+
+    public function prouducts(){
+        return $this->hasMany(Products::class);
+    }
 }
