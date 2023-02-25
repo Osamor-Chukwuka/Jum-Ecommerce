@@ -12,6 +12,15 @@
                         <form action="/add" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label h5">Shop Name</label>
+                                <input type="text" name="shop_name" class="form-control" id="name" aria-describedby="name" readonly value="{{$shopName}}">
+                                <div id="name" class="form-text">Shop name</div>
+                                @error('shop_name')
+                                    <p class="text-danger text-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label h5">Name of Product</label>
                                 <input type="text" name="name" class="form-control" id="name" aria-describedby="name" value="{{old('name')}}">
                                 <div id="name" class="form-text">Product's name</div>

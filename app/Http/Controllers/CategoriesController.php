@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Products;
+use Dotenv\Parser\Value;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -37,7 +38,11 @@ class CategoriesController extends Controller
         }
         
         else if( DB::table('seller')->where('email', auth()->user()->email)->exists()){
-            return view('add-product');
+            $shop_name = DB::table('seller')->where('email', auth()->user()->email)->first(['shopName'])->shopName;
+            
+            return view('add-product', [
+                'shopName' => $shop_name
+            ]);
         }
         
         else{
