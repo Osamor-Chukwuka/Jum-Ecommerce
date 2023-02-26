@@ -61,8 +61,8 @@ class CategoriesController extends Controller
         $form['categories_id'] = $request['category'];
 
         
-        $seller = DB::table('seller')->where('email', Auth::user()->email)->pluck('id')->first();
-        $form['seller_id'] = $seller;
+        $seller = DB::table('seller')->where('users_id', Auth::user()->id)->pluck('users_id')->first();
+        $form['users_id'] = $seller;  //This users_id is a foreign key that reference the users_id in the seller table, and the seller table users_id is a foreign key that reference the id in the users table
 
         Products::create($form);
 

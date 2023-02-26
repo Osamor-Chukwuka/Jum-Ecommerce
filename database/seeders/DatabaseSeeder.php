@@ -25,16 +25,17 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $arr2 = ['2', '3', '4', '5', '6', '7'];
-        foreach($arr2 as $b){
-            Seller::factory()->create([
-                'id' => $b
-            ]);
-        }
+        // $arr2 = ['2', '3', '4', '5', '6', '7'];
+        // foreach($arr2 as $b){
+        //     Seller::factory()->create([
+        //         'id' => $b
+        //         // 'users_id' => 2
+        //     ]);
+        // }
         
 
-        Products::factory(6)->create([
-            'seller_id' => 2
-        ]);
+        // Products::factory(6)->create([
+        //     // 'users_id' => 2
+        // ]);
     }
 }
