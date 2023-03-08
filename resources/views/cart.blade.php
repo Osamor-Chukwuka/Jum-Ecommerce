@@ -36,7 +36,8 @@
             --}}
         
             <div class="bg-white mb-3 border-top">
-                <form action="">
+                <form action="{{route('checkout')}}">
+                    @csrf
                     <button class="btn ms-3 mt-3 mb-3 btn-success btn-lg px-5">CHECKOUT</button>
                 </form>
             </div>

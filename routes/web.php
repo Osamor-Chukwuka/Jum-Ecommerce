@@ -86,3 +86,9 @@ Route::controller(SellerController::class)->group(function() {
     Route::get('/my_shop/orders', 'myShop')->name('shop_orders');
     Route::get('/my_shop/delivered', 'myShop')->name('shop_delivered');
 });
+
+// Checkout
+Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('checkout');
+
+// Verify Payment
+Route::get('cart/verify-payment/{reference}', [CartController::class, 'verify']);
