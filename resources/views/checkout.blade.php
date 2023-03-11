@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1>{{$all_sellers_details}}</h1>
     <form id="paymentForm">
         <div class="form-group">
             <label for="email">Email Address</label>
