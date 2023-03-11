@@ -21,6 +21,8 @@ class SellerController extends Controller
             'country' => 'required',
             'bank' => 'required',
             'accountNumber' => 'required',
+            'sortCode' => 'required',
+            'accountName' => 'required'
         ]);
 
         $form['email'] = auth()->user()->email;

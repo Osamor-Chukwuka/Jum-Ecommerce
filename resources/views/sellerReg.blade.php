@@ -265,6 +265,30 @@
             </div>
         </div>
 
+        {{-- ROW FOR LABEL AND INPUT 13 --}}
+        <div class="row g-0 g-lg-3 align-items-center pt-4">
+            <div class=" col-auto col-lg-auto">
+                <label for="" class="col-form-label fw-bold">full name registered with bank account *</label>
+            </div>
+            <div class="col-12 col-lg-auto">
+                <input name="accountName" type="text" id="" class="form-control" aria-describedby="passwordHelpInline">
+                
+            </div>
+        </div>
+
+        {{-- ROW FOR LABEL AND INPUT 14 --}}
+        <div class="row g-0 g-lg-3 align-items-center pt-4">
+            <div class=" col-auto col-lg-auto">
+                <label for="" class="col-form-label fw-bold">Bank Sort Code *</label>
+            </div>
+            <div class="col-12 col-lg-auto">
+                <input name="sortCode" type="text" id="" class="form-control" aria-describedby="passwordHelpInline">
+                
+            </div>
+        </div>
+    </div>
+    </div>
+
         <div class="form-navigation mt-3">
             <button type="button" class="previous btn btn-primary float-left">&lt; Previous</button>
             <button type="button" class="next btn btn-primary float-right">Next &gt;</button>

@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('country');
             $table->string('bank');
             $table->string('accountNumber');
+            $table->string('sortCode');
+            $table->string('accountName');
             $table->string('email');
             $table->timestamps();
         });

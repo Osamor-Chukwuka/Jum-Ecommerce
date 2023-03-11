@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrdersContrller;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SellerController;
 use App\Models\Categories;
@@ -88,7 +89,7 @@ Route::controller(SellerController::class)->group(function() {
 });
 
 // Checkout
-Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::get('/cart/checkout', [OrdersContrller::class, 'checkout'])->name('checkout');
 
 // Verify Payment
-Route::get('cart/verify-payment/{reference}', [CartController::class, 'verify']);
+Route::get('cart/verify-payment/{reference}', [OrdersContrller::class, 'verifyCustomerPayment']);
