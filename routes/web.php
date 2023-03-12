@@ -93,3 +93,7 @@ Route::get('/cart/checkout', [OrdersContrller::class, 'checkout'])->name('checko
 
 // Verify Payment
 Route::get('cart/verify-payment/{reference}', [OrdersContrller::class, 'verifyCustomerPayment']);
+
+// Pay Vendors
+Route::get('cart/pay-vendors', [OrdersContrller::class, 'payVendors'])->name('pay-vendors');
+

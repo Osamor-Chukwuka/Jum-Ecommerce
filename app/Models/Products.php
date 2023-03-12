@@ -14,8 +14,8 @@ class Products extends Model
         return $this->hasOne(Cart::class);
     }
 
-    public function seller(){
-        return $this->belongsTo(Seller::class);
-    }
+    // public function seller(){
+    //     return $this->belongsTo(Seller::class);
+    // }
 }
 
