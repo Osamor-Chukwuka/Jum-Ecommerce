@@ -54,6 +54,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('cart') }}">Cart</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('cart') }}">Orders</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

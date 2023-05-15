@@ -315,6 +315,7 @@ class OrdersContrller extends Controller
                                 // 'accountNumber' => 'required',
                             ];
                             Orders::create($form);
+                            $this->showReceipt($product_id, $users_id, $sellers_id, $cart_quantity);
                         }
 
 
@@ -359,6 +360,10 @@ class OrdersContrller extends Controller
         } else {
             return redirect(route('pay-vendors'));
         }
+    }
+
+    public function showReceipt($productId, $userId, $sellerId, $cartQuantity){
+        return view("receipt");
     }
 
 
