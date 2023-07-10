@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Products extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'categories_id', 'price', 'description', 'users_id'];
+    protected $fillable = ['name', 'categories_id', 'price', 'description', 'users_id', 'images'];
 
     public function cart(){
         return $this->hasOne(Cart::class);

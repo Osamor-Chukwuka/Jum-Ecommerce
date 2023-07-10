@@ -18,7 +18,8 @@ class CategoriesController extends Controller
         ]);
     }
 
-    public function show(Request $request){
+    public function show(Request $request)
+    {
         $segment = $request->segment(3);
         $relationship =  Categories::find($segment)->prouducts;
         return view('products', [
@@ -28,39 +29,46 @@ class CategoriesController extends Controller
     //
 
 
-    public function create(){
-        if(auth()->user() == []){
+    public function create()
+    {
+        if (auth()->user() == []) {
             return view('sellerReg');
-        }
-
-        elseif ( auth()->user()->email == null){
+        } elseif (auth()->user()->email == null) {
             return view('sellerReg');
-        }
-        
-        else if( DB::table('seller')->where('email', auth()->user()->email)->exists()){
+        } else if (DB::table('seller')->where('email', auth()->user()->email)->exists()) {
             $shop_name = DB::table('seller')->where('email', auth()->user()->email)->first(['shopName'])->shopName;
-            
+
             return view('add-product', [
                 'shopName' => $shop_name
             ]);
-        }
-        
-        else{
+        } else {
             return view('sellerReg');
         }
-        
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $form = $request->validate([
             'name' => 'required',
             'price' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'images' => 'required',
         ]);
 
+        $image = [];
+        if ($files = $request->file('images')) {
+            foreach ($files as $file) {
+                $destination_path = 'public/images/houses';
+                $image_name = $file->getClientOriginalName();
+                $path = $file->storeAs($destination_path, $image_name);
+                (array_push($image, $image_name));
+            }
+        }
+
+        $form['images'] = implode('|', $image);
         $form['categories_id'] = $request['category'];
 
-        
+
         $seller = DB::table('seller')->where('users_id', Auth::user()->id)->pluck('users_id')->first();
         $form['users_id'] = $seller;  //This users_id is a foreign key that reference the users_id in the seller table, and the seller table users_id is a foreign key that reference the id in the users table
 
@@ -69,16 +77,20 @@ class CategoriesController extends Controller
         return redirect('/')->with('message', 'Listing created successfully!');
     }
 
-    public function fullPage(Request $request){
+    public function fullPage(Request $request)
+    {
         $productDescId = $request->segment(3);
         $allProducts = Products::find($productDescId);
+
+        // var_dump($allProducts->images);
 
         return view('full-page', [
             'allProducts' => $allProducts
         ]);
     }
 
-    public function cartProductPage(Request $request){
+    public function cartProductPage(Request $request)
+    {
         $segment = $request->segment(3);
         $allProducts = Products::find($segment);
 

@@ -1,5 +1,9 @@
 @include('layouts.app')
 
+@php
+     $images = explode('|', $allProducts->images);
+@endphp
+
 
 <section class="bg-light mt-5 pt-5">
     @if (session('status'))
@@ -12,7 +16,8 @@
     <div class="row my-3 allign-items-center  justify-content-center g-4">
         <div class="col-8 col-lg-4 col-xl-3 bg-white">
             <div class="mt-5">
-                <img src="{{asset('images/ebook-cover.png')}}" alt="ebook cover" class="img-fluid"><hr>
+                {{-- <div>{{$images->$images}}</div> --}}
+                <img src="{{ asset('storage/images/houses/' . $images[0]) }}" alt="ebook cover" class="img-fluid"><hr>
                 <span class="fw-bold">SHARE THIS PRODUCT</span>
             </div>
             <!-- {{-- <div class="card border-0">

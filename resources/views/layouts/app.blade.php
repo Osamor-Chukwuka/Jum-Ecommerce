@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Jum</title>
+    <title>BHUShopify</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,9 +22,9 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Jum
+                    BHUShopify
                 </a>
-                <a class="navbar-brand mx-5 p-2 ps-5 bg-orange" href="{{route('seller')}}">
+                <a class="navbar-brand me-5 ms-3 p-2 ps-1 bg-orange" href="{{route('seller')}}">
                     Be a Seller
                 </a>
                 <a class="navbar-brand mx-2 p-2 ps-0 bg-orange" href="{{route('my_shop')}}">

@@ -1,6 +1,8 @@
 @include('layouts.app')
 
 
+
+
 <section id="pricing" class="bg-light mt-5 pt-5">
     <div class="container-lg">
         {{-- <div class="text-center">
